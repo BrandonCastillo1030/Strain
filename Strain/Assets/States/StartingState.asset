@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: " You work at a office where your boss has been breathing down your neck.
     \r\n So work is pretty stressful. So you finally get home so now you can either
-    \r\n play some video games or do some exercise to relieve some stress.\r\n\r\n
-    What will you do?\r (Press the key 1 or 2 to do the action)\n 1.Kill some demons
-    with the boys - play some video games\r\n 2.Get these gains - do some exercise\r\n\r\n\r\n\r\n"
+    \r\n play some video games, do some exercise , read a book, or go to the \n coffee
+    shop to relieve some stress.\n\r\n What will you do?\r (Press the key 1, 2, 3,
+    or 4 to do the action)\n 1.Kill some demons with the boys - play some video games\r\n
+    2.Get these gains - do some exercise\r\n 3.Your a wizard Harry - read a book\n
+    4.Get the good stuff - go to the coffee shop\n\r\n\r\n\r\n"
   nextStates:
   - {fileID: 11400000, guid: 772105f3bd053744783728d6d077e3fc, type: 2}
-  - {fileID: 11400000, guid: 8190b4ed40ae86041864de9e77c01ad9, type: 2}

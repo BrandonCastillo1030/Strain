@@ -123,6 +123,8 @@ public class StoryText : MonoBehaviour
             healthIncreaseConsumable = healthIncreaseConsumable + 2;
         }
 
+        CheckGameOver();
+
     }
 
     void DisplayScores()
@@ -195,11 +197,11 @@ public class StoryText : MonoBehaviour
 
     public void CheckGameOver()
     {
-        if (health == 0)
+        if (health <= 0)
         {
             SceneManager.LoadScene(2);
         }
-        if (stress == 0)
+        if (stress <= 0)
         {
             SceneManager.LoadScene(3);
         }

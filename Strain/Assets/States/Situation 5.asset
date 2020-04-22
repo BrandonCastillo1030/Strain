@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6056a8f5d1ea6d64d8f80ab93e54d705, type: 3}
   m_Name: Situation 5
   m_EditorClassIdentifier: 
-  storyText: This is situation 5!
+  storyText: " You tried to buy a device on the internet and you've been scammed.
+    \n You filed a police report but they say it will take weeks, if not then \n months
+    for you to get your money back. After hearing this you start to \n get stress.
+    To relieve some stress you either play some video games, \n do some exercise,
+    listen to music, or get a nice beverage.\n\n What will you do? \r(Press key 1,
+    2, 3, or 4 to do the action)\r\n 1.Get online with your boys - play some video
+    games\r\n 2.Find out how much you can bench - go to the Gym\r\n 3.Pick up a J.K.
+    Rollins - read a book\r\n 4.Eminem raps really fast - listen to some music"
   nextStates:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 9986c866b3766ac47a1005ad9896c0ad, type: 2}

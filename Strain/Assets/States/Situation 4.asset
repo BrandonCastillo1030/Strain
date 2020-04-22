@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6056a8f5d1ea6d64d8f80ab93e54d705, type: 3}
   m_Name: Situation 4
   m_EditorClassIdentifier: 
-  storyText: This is situation 4!
+  storyText: "The semester is almost over and you\u2019re really worried about \nyour
+    grade. You are becoming stressed so you can choose to \nde-stress by playing some
+    video games, going to the gym, reading \na book, or listening to music.\r\n\nWhat
+    will you do? \r(Press key 1, 2, 3, or 4 to do the action)\r\n1.Get online with
+    your boys - play some video games\r\n2.Find out how much you can bench - go to
+    the Gym\r\n3.Pick up a J.K. Rollins - read a book\r\n4.Eminem raps really fast
+    - listen to some music"
   nextStates:
   - {fileID: 11400000, guid: 2f7ebeaa47b2ad6438078b9e60563078, type: 2}

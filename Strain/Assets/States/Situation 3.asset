@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6056a8f5d1ea6d64d8f80ab93e54d705, type: 3}
   m_Name: Situation 3
   m_EditorClassIdentifier: 
-  storyText: This is situation 3!
+  storyText: " Your partner has been nagging you all day. They are stressing \n you
+    out and you need to find something to do. You can either \n choose to play some
+    video games, go to the gym, read a book, \n or drink some wine.\r\n \n What will
+    you do?\r (Press the key 1, 2, 3, or 4 to do the action)\r\n 1.Play some animal
+    crossing - play some video games\r\n 2.Pump some iron - go to the Gym\r\n 3.Is
+    it really better - than the movie-Read a book\r\n 4.One glass maybe - drink some
+    wine"
   nextStates:
   - {fileID: 11400000, guid: 13a0371a744613944b42368b0e750044, type: 2}

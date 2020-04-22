@@ -7,10 +7,11 @@ using UnityEngine.UI;
 
 public class StoryText : MonoBehaviour
 {
-    
 
-    public int health = 100;
-    public int stress = 80;
+    public static int health = 100;
+    public static int stress = 80;
+    //public int health = 100;
+    //public int stress = 80;
 
     int healthDecreaseGaming;
     int healthIncreaseWorkOut;
@@ -26,6 +27,9 @@ public class StoryText : MonoBehaviour
 
     public Text textComponent;
     public State StartingState;
+
+    public Text stressText;
+    public Text healthText;
 
 
     State state;
@@ -120,6 +124,12 @@ public class StoryText : MonoBehaviour
 
     }
 
+    void DisplayScores()
+    {
+        stressText.text = "Stress:" + StoryText.stress.ToString("000");
+        healthText.text = "Health:" + StoryText.health.ToString("000");
+    }
+
     private void ManageState()
     {
         var nextStates = state.GetNextStates();
@@ -178,5 +188,7 @@ public class StoryText : MonoBehaviour
             Debug.Log("Stress:" + stress);
         }
         textComponent.text = state.GetStateStory();
+
+        DisplayScores();
     }
 }

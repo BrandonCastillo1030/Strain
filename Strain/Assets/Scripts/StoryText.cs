@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class StoryText : MonoBehaviour
@@ -52,7 +53,7 @@ public class StoryText : MonoBehaviour
         healthDecreaseRead = UnityEngine.Random.Range(10, 30);
         healthIncreaseConsumable = UnityEngine.Random.Range(10, 20);
     }
-
+  
     // Update is called once per frame
     void Update()
     {
@@ -190,5 +191,17 @@ public class StoryText : MonoBehaviour
         textComponent.text = state.GetStateStory();
 
         DisplayScores();
+    }
+
+    public void CheckGameOver()
+    {
+        if (health == 0)
+        {
+            SceneManager.LoadScene(2);
+        }
+        if (stress == 0)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }

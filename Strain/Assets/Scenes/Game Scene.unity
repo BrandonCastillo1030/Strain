@@ -525,12 +525,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 450021805}
   StartingState: {fileID: 11400000, guid: 15aacb556cf3daa49b7e06eb10038fc5, type: 2}
-  Situation1: {fileID: 11400000, guid: 772105f3bd053744783728d6d077e3fc, type: 2}
-  Situation2: {fileID: 11400000, guid: 8190b4ed40ae86041864de9e77c01ad9, type: 2}
-  Situation3: {fileID: 11400000, guid: 9a2522082c4780643921315c7e141e6f, type: 2}
-  Situation4: {fileID: 0}
-  Situation5: {fileID: 0}
-  Situation6: {fileID: 0}
   stressText: {fileID: 1643160499}
   healthText: {fileID: 1598634466}
 --- !u!4 &928258324

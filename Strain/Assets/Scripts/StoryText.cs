@@ -142,7 +142,7 @@ public class StoryText : MonoBehaviour
     private void ManageState()
     {
         var nextStates = state.GetNextStates();
-        if (state = StartingState)
+        if (state == StartingState)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -199,7 +199,7 @@ public class StoryText : MonoBehaviour
                 Debug.Log("Stress:" + stress);
             }
         }
-       /* else if (state = Situation1)
+        else if (state == Situation1)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -256,7 +256,7 @@ public class StoryText : MonoBehaviour
                 Debug.Log("Stress:" + stress);
             }
         }
-        else if (state = Situation2)
+        else if (state == Situation2)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -312,7 +312,7 @@ public class StoryText : MonoBehaviour
                 Debug.Log("Health:" + health);
                 Debug.Log("Stress:" + stress);
             }
-        }*/
+        }
         textComponent.text = state.GetStateStory();
 
         DisplayScores();

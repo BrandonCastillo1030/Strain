@@ -29,6 +29,11 @@ public class StoryText : MonoBehaviour
     public Text textComponent;
     public State StartingState;
     public State Situation1;
+    public State Situation2;
+    public State Situation3;
+    public State Situation4;
+    public State Situation5;
+    public State Situation6;
 
     public Text stressText;
     public Text healthText;
@@ -38,6 +43,7 @@ public class StoryText : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+       
         //starts the game with the starting state
         state = StartingState;
         //gets the states and the text
@@ -53,6 +59,8 @@ public class StoryText : MonoBehaviour
         healthIncreaseWorkOut = UnityEngine.Random.Range(15, 30);
         healthDecreaseRead = UnityEngine.Random.Range(10, 30);
         healthIncreaseConsumable = UnityEngine.Random.Range(10, 20);
+        Debug.Log(stressDecreaseGaming);
+        Debug.Log(healthDecreaseGaming);
     }
   
     // Update is called once per frame
@@ -137,59 +145,334 @@ public class StoryText : MonoBehaviour
     private void ManageState()
     {
         var nextStates = state.GetNextStates();
-       
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
-            state = Situation1;
-            if (health <= 0)
+        if (state = StartingState)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                health = 0;
+
+                state = Situation1;
+                health = health - healthDecreaseGaming;
+                healthDecreaseGaming = healthDecreaseGaming + 2;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseGaming;
+                stressDecreaseGaming = stressDecreaseGaming - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
             }
-            health = health - healthDecreaseGaming;
-            healthDecreaseGaming = healthDecreaseGaming + 2;
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                state = Situation1;
+                health = health + healthIncreaseWorkOut;
+                healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-            stress = stress + 5;
-            stress = stress - stressDecreaseGaming;
-            stressDecreaseGaming = stressDecreaseGaming - 2;
-            Debug.Log("Health:" + health);
-            Debug.Log("Stress:" + stress);
+                stress = stress + 5;
+                stress = stress - stressDecreaseWorkOut;
+                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                state = Situation1;
+                health = health - healthDecreaseRead;
+                healthDecreaseRead = healthDecreaseRead + 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseRead;
+                stressDecreaseRead = stressDecreaseRead - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                state = Situation1;
+                health = health + healthIncreaseConsumable;
+                healthIncreaseConsumable = healthIncreaseConsumable - 4;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseConsumable;
+                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            state = nextStates[0];
-            health = health + healthIncreaseWorkOut;
-            healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-            stress = stress + 5;
-            stress = stress - stressDecreaseWorkOut;
-            stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
-            Debug.Log("Health:" + health);
-            Debug.Log("Stress:" + stress);
+        else if (state = Situation1)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+
+                state = Situation2;
+               
+                health = health - healthDecreaseGaming;
+                healthDecreaseGaming = healthDecreaseGaming + 2;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseGaming;
+                stressDecreaseGaming = stressDecreaseGaming - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                state = Situation2;
+                health = health + healthIncreaseWorkOut;
+                healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseWorkOut;
+                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                state = Situation2;
+                health = health - healthDecreaseRead;
+                healthDecreaseRead = healthDecreaseRead + 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseRead;
+                stressDecreaseRead = stressDecreaseRead - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                state = Situation2;
+                health = health + healthIncreaseConsumable;
+                healthIncreaseConsumable = healthIncreaseConsumable - 4;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseConsumable;
+                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (state = Situation2)
         {
-            state = nextStates[0];
-            health = health - healthDecreaseRead;
-            healthDecreaseRead = healthDecreaseRead + 5;
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
 
-            stress = stress + 5;
-            stress = stress - stressDecreaseRead;
-            stressDecreaseRead = stressDecreaseRead - 2;
+                state = Situation3;
+                health = health - healthDecreaseGaming;
+                healthDecreaseGaming = healthDecreaseGaming + 2;
 
-            Debug.Log("Health:" + health);
-            Debug.Log("Stress:" + stress);
+                stress = stress + 5;
+                stress = stress - stressDecreaseGaming;
+                stressDecreaseGaming = stressDecreaseGaming - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                state = Situation3;
+                health = health + healthIncreaseWorkOut;
+                healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseWorkOut;
+                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                state = Situation3;
+                health = health - healthDecreaseRead;
+                healthDecreaseRead = healthDecreaseRead + 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseRead;
+                stressDecreaseRead = stressDecreaseRead - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                state = Situation3;
+                health = health + healthIncreaseConsumable;
+                healthIncreaseConsumable = healthIncreaseConsumable - 4;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseConsumable;
+                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (state = Situation3)
         {
-            state = nextStates[0];
-            health = health + healthIncreaseConsumable;
-            healthIncreaseConsumable = healthIncreaseConsumable - 4;
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
 
-            stress = stress + 5;
-            stress = stress - stressDecreaseConsumable;
-            stressDecreaseConsumable = stressDecreaseConsumable - 2;
+                state = Situation4;
+                health = health - healthDecreaseGaming;
+                healthDecreaseGaming = healthDecreaseGaming + 2;
 
-            Debug.Log("Health:" + health);
-            Debug.Log("Stress:" + stress);
+                stress = stress + 5;
+                stress = stress - stressDecreaseGaming;
+                stressDecreaseGaming = stressDecreaseGaming - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                state = Situation4;
+                health = health + healthIncreaseWorkOut;
+                healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseWorkOut;
+                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                state = Situation4;
+                health = health - healthDecreaseRead;
+                healthDecreaseRead = healthDecreaseRead + 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseRead;
+                stressDecreaseRead = stressDecreaseRead - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                state = Situation4;
+                health = health + healthIncreaseConsumable;
+                healthIncreaseConsumable = healthIncreaseConsumable - 4;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseConsumable;
+                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+
+        }
+        else if (state = Situation4)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+
+                state = Situation5;
+                health = health - healthDecreaseGaming;
+                healthDecreaseGaming = healthDecreaseGaming + 2;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseGaming;
+                stressDecreaseGaming = stressDecreaseGaming - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                state = Situation5;
+                health = health + healthIncreaseWorkOut;
+                healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseWorkOut;
+                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                state = Situation5;
+                health = health - healthDecreaseRead;
+                healthDecreaseRead = healthDecreaseRead + 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseRead;
+                stressDecreaseRead = stressDecreaseRead - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                state = Situation5;
+                health = health + healthIncreaseConsumable;
+                healthIncreaseConsumable = healthIncreaseConsumable - 4;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseConsumable;
+                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+
+        }
+        else if (state = Situation5)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+
+                state = Situation6;
+                health = health - healthDecreaseGaming;
+                healthDecreaseGaming = healthDecreaseGaming + 2;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseGaming;
+                stressDecreaseGaming = stressDecreaseGaming - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                state = Situation6;
+                health = health + healthIncreaseWorkOut;
+                healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseWorkOut;
+                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                state = Situation6;
+                health = health - healthDecreaseRead;
+                healthDecreaseRead = healthDecreaseRead + 5;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseRead;
+                stressDecreaseRead = stressDecreaseRead - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                state = Situation6;
+                health = health + healthIncreaseConsumable;
+                healthIncreaseConsumable = healthIncreaseConsumable - 4;
+
+                stress = stress + 5;
+                stress = stress - stressDecreaseConsumable;
+                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+
+                Debug.Log("Health:" + health);
+                Debug.Log("Stress:" + stress);
+            }
+
         }
         textComponent.text = state.GetStateStory();
 

@@ -28,6 +28,7 @@ public class StoryText : MonoBehaviour
 
     public Text textComponent;
     public State StartingState;
+    public State Situation1;
 
     public Text stressText;
     public Text healthText;
@@ -138,7 +139,7 @@ public class StoryText : MonoBehaviour
         var nextStates = state.GetNextStates();
        
         if (Input.GetKeyDown(KeyCode.Alpha1)){
-            state = nextStates[0];
+            state = Situation1;
             if (health <= 0)
             {
                 health = 0;

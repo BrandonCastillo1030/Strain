@@ -10,7 +10,7 @@ public class StoryText : MonoBehaviour
 {
 
     public static int health = 100;
-    public static int stress = 80;
+    public static int acuteStress = 80;
     //public int health = 100;
     //public int stress = 80;
 
@@ -20,10 +20,10 @@ public class StoryText : MonoBehaviour
     int healthIncreaseConsumable;
 
 
-    int stressDecreaseGaming;
-    int stressDecreaseWorkOut;
-    int stressDecreaseRead;
-    int stressDecreaseConsumable;
+    int acutestressDecreaseGaming;
+    int acutestressDecreaseWorkOut;
+    int acutestressDecreaseRead;
+    int acutestressDecreaseConsumable;
 
 
     public Text textComponent;
@@ -49,11 +49,11 @@ public class StoryText : MonoBehaviour
         //gets the states and the text
         textComponent.text = state.GetStateStory();
         // these are the stress values and where they get the random variable
-        stressDecreaseGaming = UnityEngine.Random.Range(10, 20);
+        acutestressDecreaseGaming = UnityEngine.Random.Range(10, 20);
         //Debug.Log(stressDecreaseGaming);
-        stressDecreaseWorkOut = UnityEngine.Random.Range(10, 20);
-        stressDecreaseRead = UnityEngine.Random.Range(10, 20);
-        stressDecreaseConsumable = UnityEngine.Random.Range(10, 20);
+        acutestressDecreaseWorkOut = UnityEngine.Random.Range(10, 20);
+        acutestressDecreaseRead = UnityEngine.Random.Range(10, 20);
+        acutestressDecreaseConsumable = UnityEngine.Random.Range(10, 20);
 
         healthDecreaseGaming = UnityEngine.Random.Range(10, 30);
         healthIncreaseWorkOut = UnityEngine.Random.Range(15, 30);
@@ -67,14 +67,14 @@ public class StoryText : MonoBehaviour
         ManageState();
         
         //makes sure stress doesn't go below 0
-        if (stress < 0)
+        if (acuteStress < 0)
         {
-            stress = 0; 
+            acuteStress = 0; 
         }
         //makes sure stress doesn't go above 100
-        if (stress > 100)
+        if (acuteStress > 100)
         {
-            stress = 100;
+            acuteStress = 100;
         }
 
         //makes sure health doesn't go below 0
@@ -89,24 +89,24 @@ public class StoryText : MonoBehaviour
         }
 
         //makes sure that the stress levels dont go below four so that each method still works
-        if (stressDecreaseGaming < 4)
+        if (acutestressDecreaseGaming < 4)
         {
-            stressDecreaseGaming = stressDecreaseGaming + 1;
+            acutestressDecreaseGaming = acutestressDecreaseGaming + 1;
         }
 
-        if (stressDecreaseWorkOut < 4)
+        if (acutestressDecreaseWorkOut < 4)
         {
-            stressDecreaseGaming = stressDecreaseGaming + 1;
+            acutestressDecreaseGaming = acutestressDecreaseGaming + 1;
         }
 
-        if (stressDecreaseRead < 4)
+        if (acutestressDecreaseRead < 4)
         {
-            stressDecreaseGaming = stressDecreaseGaming + 1;
+            acutestressDecreaseGaming = acutestressDecreaseGaming + 1;
         }
 
-        if (stressDecreaseConsumable < 4)
+        if (acutestressDecreaseConsumable < 4)
         {
-            stressDecreaseGaming = stressDecreaseGaming + 1;
+            acutestressDecreaseGaming = acutestressDecreaseGaming + 1;
         }
 
         // how far it can either decrease or increase health
@@ -136,7 +136,7 @@ public class StoryText : MonoBehaviour
 
     void DisplayScores()
     {
-        stressText.text = "Stress:" + StoryText.stress.ToString("000");
+        stressText.text = "Stress:" + StoryText.acuteStress.ToString("000");
         healthText.text = "Health:" + StoryText.health.ToString("000");
     }
 
@@ -155,11 +155,11 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseGaming;
                 healthDecreaseGaming = healthDecreaseGaming + 2;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseGaming;
-                stressDecreaseGaming = stressDecreaseGaming - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseGaming;
+                acutestressDecreaseGaming = acutestressDecreaseGaming - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -167,11 +167,11 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseWorkOut;
                 healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseWorkOut;
-                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseWorkOut;
+                acutestressDecreaseWorkOut = acutestressDecreaseWorkOut - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
@@ -179,12 +179,12 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseRead;
                 healthDecreaseRead = healthDecreaseRead + 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseRead;
-                stressDecreaseRead = stressDecreaseRead - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseRead;
+                acutestressDecreaseRead = acutestressDecreaseRead - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
@@ -192,12 +192,12 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseConsumable;
                 healthIncreaseConsumable = healthIncreaseConsumable - 4;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseConsumable;
-                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseConsumable;
+                acutestressDecreaseConsumable = acutestressDecreaseConsumable - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
         }
         else if (state == Situation1)
@@ -212,11 +212,11 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseGaming;
                 healthDecreaseGaming = healthDecreaseGaming + 2;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseGaming;
-                stressDecreaseGaming = stressDecreaseGaming - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseGaming;
+                acutestressDecreaseGaming = acutestressDecreaseGaming - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -224,11 +224,11 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseWorkOut;
                 healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseWorkOut;
-                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseWorkOut;
+                acutestressDecreaseWorkOut = acutestressDecreaseWorkOut - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
@@ -236,12 +236,12 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseRead;
                 healthDecreaseRead = healthDecreaseRead + 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseRead;
-                stressDecreaseRead = stressDecreaseRead - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseRead;
+                acutestressDecreaseRead = acutestressDecreaseRead - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
@@ -249,12 +249,12 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseConsumable;
                 healthIncreaseConsumable = healthIncreaseConsumable - 4;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseConsumable;
-                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseConsumable;
+                acutestressDecreaseConsumable = acutestressDecreaseConsumable - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
         }
         else if (state == Situation2)
@@ -269,11 +269,11 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseGaming;
                 healthDecreaseGaming = healthDecreaseGaming + 2;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseGaming;
-                stressDecreaseGaming = stressDecreaseGaming - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseGaming;
+                acutestressDecreaseGaming = acutestressDecreaseGaming - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -281,11 +281,11 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseWorkOut;
                 healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseWorkOut;
-                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseWorkOut;
+                acutestressDecreaseWorkOut = acutestressDecreaseWorkOut - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
@@ -293,12 +293,12 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseRead;
                 healthDecreaseRead = healthDecreaseRead + 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseRead;
-                stressDecreaseRead = stressDecreaseRead - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseRead;
+                acutestressDecreaseRead = acutestressDecreaseRead - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
@@ -306,12 +306,12 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseConsumable;
                 healthIncreaseConsumable = healthIncreaseConsumable - 4;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseConsumable;
-                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseConsumable;
+                acutestressDecreaseConsumable = acutestressDecreaseConsumable - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
         }
         else if (state == Situation3)
@@ -326,11 +326,11 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseGaming;
                 healthDecreaseGaming = healthDecreaseGaming + 2;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseGaming;
-                stressDecreaseGaming = stressDecreaseGaming - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseGaming;
+                acutestressDecreaseGaming = acutestressDecreaseGaming - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -338,11 +338,11 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseWorkOut;
                 healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-                stress = stress + 4;
-                stress = stress - stressDecreaseWorkOut;
-                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                acuteStress = acuteStress + 4;
+                acuteStress = acuteStress - acutestressDecreaseWorkOut;
+                acutestressDecreaseWorkOut = acutestressDecreaseWorkOut - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
@@ -350,12 +350,12 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseRead;
                 healthDecreaseRead = healthDecreaseRead + 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseRead;
-                stressDecreaseRead = stressDecreaseRead - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseRead;
+                acutestressDecreaseRead = acutestressDecreaseRead - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
@@ -363,12 +363,12 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseConsumable;
                 healthIncreaseConsumable = healthIncreaseConsumable - 4;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseConsumable;
-                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseConsumable;
+                acutestressDecreaseConsumable = acutestressDecreaseConsumable - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
         }
         else if (state == Situation4)
@@ -383,11 +383,11 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseGaming;
                 healthDecreaseGaming = healthDecreaseGaming + 2;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseGaming;
-                stressDecreaseGaming = stressDecreaseGaming - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseGaming;
+                acutestressDecreaseGaming = acutestressDecreaseGaming - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -395,11 +395,11 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseWorkOut;
                 healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-                stress = stress + 4;
-                stress = stress - stressDecreaseWorkOut;
-                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                acuteStress = acuteStress + 4;
+                acuteStress = acuteStress - acutestressDecreaseWorkOut;
+                acutestressDecreaseWorkOut = acutestressDecreaseWorkOut - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
@@ -407,12 +407,12 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseRead;
                 healthDecreaseRead = healthDecreaseRead + 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseRead;
-                stressDecreaseRead = stressDecreaseRead - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseRead;
+                acutestressDecreaseRead = acutestressDecreaseRead - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
@@ -420,12 +420,12 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseConsumable;
                 healthIncreaseConsumable = healthIncreaseConsumable - 4;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseConsumable;
-                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseConsumable;
+                acutestressDecreaseConsumable = acutestressDecreaseConsumable - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
         }
         else if (state == Situation5)
@@ -440,11 +440,11 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseGaming;
                 healthDecreaseGaming = healthDecreaseGaming + 2;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseGaming;
-                stressDecreaseGaming = stressDecreaseGaming - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseGaming;
+                acutestressDecreaseGaming = acutestressDecreaseGaming - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -452,11 +452,11 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseWorkOut;
                 healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-                stress = stress + 4;
-                stress = stress - stressDecreaseWorkOut;
-                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                acuteStress = acuteStress + 4;
+                acuteStress = acuteStress - acutestressDecreaseWorkOut;
+                acutestressDecreaseWorkOut = acutestressDecreaseWorkOut - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
@@ -464,12 +464,12 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseRead;
                 healthDecreaseRead = healthDecreaseRead + 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseRead;
-                stressDecreaseRead = stressDecreaseRead - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseRead;
+                acutestressDecreaseRead = acutestressDecreaseRead - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
@@ -477,12 +477,12 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseConsumable;
                 healthIncreaseConsumable = healthIncreaseConsumable - 4;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseConsumable;
-                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseConsumable;
+                acutestressDecreaseConsumable = acutestressDecreaseConsumable - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
         }
         else if (state == Situation6)
@@ -497,11 +497,11 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseGaming;
                 healthDecreaseGaming = healthDecreaseGaming + 2;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseGaming;
-                stressDecreaseGaming = stressDecreaseGaming - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseGaming;
+                acutestressDecreaseGaming = acutestressDecreaseGaming - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -509,11 +509,11 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseWorkOut;
                 healthIncreaseWorkOut = healthIncreaseWorkOut - 5;
 
-                stress = stress + 4;
-                stress = stress - stressDecreaseWorkOut;
-                stressDecreaseWorkOut = stressDecreaseWorkOut - 2;
+                acuteStress = acuteStress + 4;
+                acuteStress = acuteStress - acutestressDecreaseWorkOut;
+                acutestressDecreaseWorkOut = acutestressDecreaseWorkOut - 2;
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
@@ -521,12 +521,12 @@ public class StoryText : MonoBehaviour
                 health = health - healthDecreaseRead;
                 healthDecreaseRead = healthDecreaseRead + 5;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseRead;
-                stressDecreaseRead = stressDecreaseRead - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseRead;
+                acutestressDecreaseRead = acutestressDecreaseRead - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
@@ -534,12 +534,12 @@ public class StoryText : MonoBehaviour
                 health = health + healthIncreaseConsumable;
                 healthIncreaseConsumable = healthIncreaseConsumable - 4;
 
-                stress = stress + 5;
-                stress = stress - stressDecreaseConsumable;
-                stressDecreaseConsumable = stressDecreaseConsumable - 2;
+                acuteStress = acuteStress + 5;
+                acuteStress = acuteStress - acutestressDecreaseConsumable;
+                acutestressDecreaseConsumable = acutestressDecreaseConsumable - 2;
 
                 Debug.Log("Health:" + health);
-                Debug.Log("Stress:" + stress);
+                Debug.Log("Stress:" + acuteStress);
             }
         }
         textComponent.text = state.GetStateStory();
@@ -553,7 +553,7 @@ public class StoryText : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
-        if (stress <= 0)
+        if (acuteStress <= 0)
         {
             SceneManager.LoadScene(3);
         }

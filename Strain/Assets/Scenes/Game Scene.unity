@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 1598634467}
   - component: {fileID: 1598634466}
   m_Layer: 5
-  m_Name: Health
+  m_Name: chronicStress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,8 +733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 615, y: 89}
-  m_SizeDelta: {x: 277, y: 64.5}
+  m_AnchoredPosition: {x: 548, y: -11}
+  m_SizeDelta: {x: 384.6, y: 64.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598634466
 MonoBehaviour:
@@ -767,7 +767,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Health:'
+  m_Text: 'Chronic Stress:'
 --- !u!222 &1598634467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 1643160500}
   - component: {fileID: 1643160499}
   m_Layer: 5
-  m_Name: Stress
+  m_Name: acuteStress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,8 +810,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 615, y: 32.25}
-  m_SizeDelta: {x: 277, y: 64.5}
+  m_AnchoredPosition: {x: 569.1, y: 54.8}
+  m_SizeDelta: {x: 368.8, y: 67.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643160499
 MonoBehaviour:
@@ -844,7 +844,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Stress:'
+  m_Text: 'Acute Stress:'
 --- !u!222 &1643160500
 CanvasRenderer:
   m_ObjectHideFlags: 0

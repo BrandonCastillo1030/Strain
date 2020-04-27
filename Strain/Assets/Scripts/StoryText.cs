@@ -712,10 +712,14 @@ public class StoryText : MonoBehaviour
         if (chronicStress >= 100)
         {
             SceneManager.LoadScene(2);
+            chronicStress = 40;
+            acuteStress = 80;
         }
         if (chronicStress <= 0)
         {
             SceneManager.LoadScene(3);
+            chronicStress = 40;
+            acuteStress = 80;
         }
     }
 }

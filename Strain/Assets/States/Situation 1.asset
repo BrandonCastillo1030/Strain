@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Situation 1
   m_EditorClassIdentifier: 
   storyText: " You are trying to purchase the Jordan 1 Christian Dior on the first
-    day. \n While you are waiting to get in the website to purchase the shoe you can\n
-    either play some video games, exercise, read, or make some coffee.\n\n What will
-    you do?\r (Press the key 1, 2, 3, or 4 to do the action)\n 1.Get your ankles broken
-    in NBA 2K - play some video games\r\n 2.Surpass your limits - do some exercise\r\n
-    3.Winter coming - read a book\n 4.Brew Potion - make a coffee"
+    day. \n While you are waiting to get in the website to purchase the shoe you
+    can\neither play some video games, exercise, read, or make some coffee.\n\n What
+    will you do?\r (Press the key 1, 2, 3, or 4 to do the action)\n 1.Get your ankles
+    broken in NBA 2K - play some video games\r\n 2.Surpass your limits - do some
+    exercise\r\n 3.Winter coming - read a book\n 4.Brew Potion - make a coffee"
   nextStates:
   - {fileID: 11400000, guid: 8190b4ed40ae86041864de9e77c01ad9, type: 2}

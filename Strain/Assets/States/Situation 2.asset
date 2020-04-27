@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Situation 2
   m_EditorClassIdentifier: 
   storyText: " Since you are still in college your professor gives a project with
-    a                                                  unresonable deadline. You did
-    some of your project and now it's \n time for a break. You can either play some
-    video games, exercise, \n read, or make cofee.\n\n What will you do?\r (Press
-    the key 1, 2, 3, or 4 to do the action)\n 1.Go monster hunting - play some video
-    games\r\n 2.Become super human - do some exercise\r\n 3.Explooooooosion - read
-    a book\n 4.Brew Potion - make a coffee"
+    a                                                        unresonable deadline.
+    You did some of your project and now it's \n time for a break. You can either
+    play some video games, exercise, \n read, or make cofee.\n\n What will you do?\r
+    (Press the key 1, 2, 3, or 4 to do the action)\n 1.Go monster hunting - play
+    some video games\r\n 2.Become super human - do some exercise\r\n 3.Explooooooosion
+    - read a book\n 4.Brew Potion - make a coffee"
   nextStates:
   - {fileID: 11400000, guid: 9a2522082c4780643921315c7e141e6f, type: 2}
